@@ -167,8 +167,8 @@ RUN cd /etc/nginx/modsecurity.d && \
     mv modsecurity.conf-recommended modsecurity.conf
 
 # Samos replace include.conf and modsecurity.conf file
-RUN rm /etc/nginx/modsecurity.d/modsecurity.conf && \
-    rm /etc/nginx/modsecurity.d/include.conf
+#   rm /etc/nginx/modsecurity.d/modsecurity.conf && \
+RUN rm /etc/nginx/modsecurity.d/include.conf
 COPY --from=modsecurity-build /opt/modseccrs-config/include.conf /etc/nginx/modsecurity.d/include.conf
 # COPY --from=modsecurity-build /opt/DockerModsecurityCoreruleset/insideModsec/modsecurity.conf /etc/nginx/modsecurity.d/modsecurity.conf
 
